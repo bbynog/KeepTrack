@@ -1,0 +1,43 @@
+﻿@model KeepTrack.Models.Bill
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Nova Conta";
+}
+
+
+<form method="post">
+    <input type="hidden" name="id" value="@Model.BillId" />
+    <div class="form-group">
+        <label for="creditor" class="form-label">Credor</label>
+        <input type="text" name="creditor" value="@Model.Creditor" class="form-control" id="creditor" placeholder="Digite o credor"
+               @Html.ValidationMessage("creditor")
+    </div>
+    <div class="form-group">
+        <label for="debtor" class="form-label">Devedor</label>
+        <input type="text" name="debtor" value="@Model.Debtor" class="form-control" id="debtor" placeholder="Digite o devedor"
+               @Html.ValidationMessage("debtor")
+    </div>
+    <div class="form-group">
+        <label for="amount" class="form-label">Valor</label>
+        <input type="number" name="amount" value="@Model.Amount" class="form-control" id="amount" placeholder="Digite o valor"
+               @Html.ValidationMessage("amount")
+    </div>
+    <div class="form-group">
+        <label for="description" class="form-label">Descrição</label>
+        <input type="text" name="description" value="@Model.Description" class="form-control" id="description" placeholder="Digite a descrição"
+               @Html.ValidationMessage("description")
+    </div>
+    <div class="form-group">
+        <label for="creditdate" class="form-label">Data do pagamento</label>
+        <input type="date" name="creditdate" value="@Model.CreditDate" class="form-control" id="creditdate" placeholder="Selecione a data em que a conta foi paga"
+               @Html.ValidationMessage("creditdate")
+    </div>
+    <div class="form-group">
+        <label for="duedate" class="form-label">Data de Vencimento</label>
+        <input type="date" name="duedate" value="@Model.DueDate" class="form-control" id="duedate" placeholder="Selecione a data de vencimento"
+               @Html.ValidationMessage("duedate")
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

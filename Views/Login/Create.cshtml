@@ -1,0 +1,23 @@
+﻿@model KeepTrack.Models.User
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Criar Usuário";
+}
+
+
+<form method="post">
+    <input type="hidden" name="id" value="@Model.UserId" />
+    <div class="form-group">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" name="name" value="@Model.Name" class="form-control" id="name" placeholder="Digite seu nome"
+               @Html.ValidationMessage("nome")
+    </div>
+    <div class="form-group">
+        <label for="password" class="form-label">Senha</label>
+        <input type="password" name="password" value="@Model.Password" class="form-control" id="password" placeholder="Digite uma senha"
+               @Html.ValidationMessage("password")
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
